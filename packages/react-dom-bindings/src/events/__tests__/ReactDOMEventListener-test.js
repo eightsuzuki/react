@@ -10,9 +10,9 @@ import { createHostRootFiber } from 'react-reconciler/src/ReactFiber';
 import { ConcurrentRoot } from 'react-reconciler/src/ReactRootTags';
 import { precacheFiberNode } from '../../client/ReactDOMComponentTree';
 
-test('call test', () => {
-  getEventPriority('message');
-});
+// test('call test', () => {
+//   getEventPriority('message');
+// });
 
 describe('dispatchEvent tests', () => {
   let dom;
@@ -29,7 +29,20 @@ describe('dispatchEvent tests', () => {
     nativeEvent = new dom.window.MouseEvent('click', {});
     targetNode.dispatchEvent(nativeEvent);
     hostInst = createHostRootFiber(ConcurrentRoot);
+    );
   });
+
+  // test('findInstanceBlockingEvent', () => {
+  //   precacheFiberNode(hostInst, targetNode);
+  //   expect(findInstanceBlockingEvent(nativeEvent)).toBe(null);
+  // });
+
+  test('findInstanceBlockingEvent', () => {
+    const buttonInstance = findInstanceBlockingEvent('click', nativeEvent);
+    expect(buttonInstance.type).toBe(nativeEvent);
+  });
+
+
 
   // test('dispatchDiscreteEvent', () => {
   //   const domEventName = 'click';
@@ -58,8 +71,5 @@ describe('dispatchEvent tests', () => {
   //   );
   // });
 
-  test('findInstanceBlockingEvent', () => {
-    precacheFiberNode(hostInst, targetNode);
-    expect(findInstanceBlockingEvent(nativeEvent)).toBe(null);
-  });
+
 });

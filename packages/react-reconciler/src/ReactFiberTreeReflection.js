@@ -44,3 +44,21 @@ export function getNearestMountedFiber(fiber: Fiber): null | Fiber {
   // that has been unmounted.
   return null;
 }
+
+export function getSuspenseInstanceFromFiber(
+  fiber: Fiber,
+): null | SuspenseInstance {
+  if (fiber.tag === SuspenseComponent) {
+    let suspenseState: SuspenseState | null = fiber.memoizedState;
+    if (suspenseState === null) {
+      const current = fiber.alternate;
+      if (current !== null) {
+        suspenseState = current.memoizedState;
+      }
+    }
+    if (suspenseState !== null) {
+      return suspenseState.dehydrated;
+    }
+  }
+  return null;
+}
