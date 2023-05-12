@@ -1,7 +1,6 @@
 /**
- *  @flow
+ * @flow
  */
-
 'use strict';
 
 import { TypeOfMode } from './ReactTypeOfMode';

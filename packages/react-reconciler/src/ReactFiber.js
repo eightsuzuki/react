@@ -1,5 +1,5 @@
 /**
- *  @flow
+ * @flow
  */
 
 import { Fiber } from './ReactInternalTypes';
@@ -7,7 +7,7 @@ import { ConcurrentMode, NoMode, TypeOfMode } from './ReactTypeOfMode';
 import type { RootTag } from './ReactRootTags';
 import { ConcurrentRoot } from './ReactRootTags';
 
-function FiberNode(this: $FlowFiXMe, mode: TypeOfMode) {
+function FiberNode(this: $FlowFixMe, mode: TypeOfMode) {
   // Fiber
   this.updateQueue = null;
   this.mode = mode;

@@ -2,9 +2,9 @@
  * @flow
  */
 
-import getVendorPrefixedEventName from "./getVendorPrefixedEventName";
+import getVendorPrefixedEventName from './getVendorPrefixedEventName';
 
-export type DOMEventName = ;
+export type DOMEventName =
   | 'abort'
   | 'afterblur' // Not a real event. This is used by event experiments.
   // These are vendor-prefixed so you should use the exported constants instead:
@@ -98,6 +98,8 @@ export type DOMEventName = ;
   | 'touchend'
   | 'touchmove'
   | 'touchstart'
+  // These are vendor-prefixed so you should use the exported constants instead:
+  // 'transitionend' |
   | 'volumechange'
   | 'waiting'
   | 'wheel';

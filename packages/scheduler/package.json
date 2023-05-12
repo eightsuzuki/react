@@ -1,11 +1,11 @@
 {
-  "name": "react-reconciler",
+  "name": "scheduler",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "jest": {
     "moduleNameMapper": {
-        "^scheduler$": "<rootDir>/packages/scheduler"
+      "^scheduler$": "<rootDir>/packages/scheduler"
     }
   },
   "scripts": {

@@ -1,5 +1,5 @@
 /**
- *  @flow
+ * @flow
  */
 
 import { Fiber } from './ReactInternalTypes';

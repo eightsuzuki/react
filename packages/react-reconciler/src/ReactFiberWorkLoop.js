@@ -1,7 +1,6 @@
 /**
- *  @flow
+ * @flow
  */
-
 import { Fiber } from './ReactInternalTypes';
 import { ConcurrentMode, NoMode } from './ReactTypeOfMode';
 import { Lane, SyncLane } from './ReactFiberLane';
