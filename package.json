@@ -1,0 +1,23 @@
+{
+  "author": "okuda",
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "yarn": "^1.22.19"
+  },
+  "license": "MIT",
+  "private": true,
+  "repository": "git@github.com:okuda-seminar/react.git",
+  "scripts": {
+    "build": "node ./scripts/rollup/build-all-release-channels.js",
+    "test": "jest"
+  },
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "jsdom": "^21.1.0",
+    "minimist": "^1.2.8"
+  }
+}

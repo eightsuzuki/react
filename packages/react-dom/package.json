@@ -1,0 +1,18 @@
+{
+  "name": "react-dom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "jest": {
+    "moduleNameMapper": {
+        "^react-dom$": "<rootDir>/packages/react-dom",
+        "^react-reconciler$": "<rootDir>/packages/react-reconciler"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
