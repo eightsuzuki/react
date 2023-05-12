@@ -9,6 +9,8 @@ const randomKey = Math.random().toString(36).slice(2);
 const internalInstanceKey = '__reactFiber$' + randomKey;
 const internalContainerInstanceKey = '__reactContainer$' + randomKey;
 
+console.log(internalInstanceKey);
+
 export function precacheFiberNode(
   hostInst: Fiber,
   node: Instance | TextInstance | SuspenseInstance | ReactScopeInstance

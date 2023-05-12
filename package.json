@@ -1,7 +1,6 @@
 {
   "author": "okuda",
   "devDependencies": {
-    "@babel/cli": "^7.21.5",
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
     "babel-jest": "^29.5.0",
@@ -28,8 +27,5 @@
     "jsdom": "^21.1.0",
     "minimist": "^1.2.8",
     "mock-require": "^3.0.3"
-  },
-  "name": "react",
-  "main": "index.js",
-  "packageManager": "yarn@3.5.0"
+  }
 }

@@ -1,11 +1,11 @@
+import { JSDOM } from 'jsdom';
+
 import {
   getClosestInstanceFromNode,
   precacheFiberNode,
 } from '../ReactDOMComponentTree';
 import { createHostRootFiber } from 'react-reconciler/src/ReactFiber';
 import { ConcurrentRoot } from 'react-reconciler/src/ReactRootTags';
-
-import { JSDOM } from 'jsdom';
 
 describe('ReactDomComponentTree', () => {
   let dom;
