@@ -247,7 +247,7 @@ export function findInstanceBlockingEvent(
   return_targetInst = null;
 
   const nativeEventTarget = getEventTarget(nativeEvent);
-  // let targetInst = getClosestInstanceFromNode(nativeEventTarget);
+  let targetInst = getClosestInstanceFromNode(nativeEventTarget);
 
   // if (targetInst !== null) {
   //   const nearestMounted = getNearestMountedFiber(targetInst);

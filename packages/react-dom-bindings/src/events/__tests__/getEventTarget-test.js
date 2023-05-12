@@ -21,24 +21,21 @@ describe('getEventTarget', () => {
   });
 
   test('returns the event target node', () => {
-    const event = new dom.window.MouseEvent('click', { target: targetNode });
-    // expect(getEventTarget(event)).toBe(targetNode);
-    // expect(getEventTarget(event));
-    let target = event.target || event.srcElement || window;
-    console.log(event);
-    console.log(event.target);
-    console.log(event.srcElement);
-    console.log(targetNode);
+    const event = new dom.window.MouseEvent('click', {});
+    targetNode.dispatchEvent(event);
+    expect(getEventTarget(event)).toBe(targetNode);
   });
 
   test('handles SVG <use> elements', () => {
     useElement.correspondingUseElement = targetNode;
-    const event = new dom.window.MouseEvent('click', { target: useElement });
-    // expect(getEventTarget(event)).toBe(targetNode);
+    const event = new dom.window.MouseEvent('click', {});
+    targetNode.dispatchEvent(event);
+    expect(getEventTarget(event)).toBe(targetNode);
   });
 
   test('handles text nodes', () => {
-    const event = new dom.window.MouseEvent('click', { target: textNode });
-    // expect(getEventTarget(event)).toBe(parentNode);
+    const event = new dom.window.MouseEvent('click', {});
+    targetNode.dispatchEvent(event);
+    expect(getEventTarget(event)).toBe(parentNode);
   });
 });

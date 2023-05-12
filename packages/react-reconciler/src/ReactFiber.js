@@ -1,16 +1,23 @@
 /**
  * @flow
  */
-
+import { NoFlags } from './ReactFiberFlags';
 import { Fiber } from './ReactInternalTypes';
 import { ConcurrentMode, NoMode, TypeOfMode } from './ReactTypeOfMode';
-import type { RootTag } from './ReactRootTags';
 import { ConcurrentRoot } from './ReactRootTags';
+import type { RootTag } from './ReactRootTags';
+import type { WorkTag } from './ReactWorkTags';
 
-function FiberNode(this: $FlowFixMe, mode: TypeOfMode) {
+function FiberNode(this: $FlowFixMe, mode: TypeOfMode, tag: WorkTag) {
   // Fiber
-  this.updateQueue = null;
   this.mode = mode;
+  this.return = null;
+  this.tag = tag;
+  this.updateQueue = null;
+
+  // Effect
+  this.alternate = null;
+  this.flags = NoFlags;
 }
 
 function createFiber(mode: TypeOfMode): Fiber {
