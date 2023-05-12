@@ -12,7 +12,7 @@
   "repository": "git@github.com:okuda-seminar/react.git",
   "scripts": {
     "build": "node ./scripts/rollup/build-all-release-channels.js",
-    "test": "jest --silent=false --verbose"
+    "test": "jest --silent=false --verbose false"
   },
   "version": "1.0.0",
   "workspaces": [
