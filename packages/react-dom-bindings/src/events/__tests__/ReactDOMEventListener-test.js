@@ -34,3 +34,7 @@ test('dispatchEvent tests', () => {
   // Call the function to be tested
   dispatchDiscreteEvent(domEventName, eventSystemFlags, myButton, nativeEvent);
 });
+
+test('call test', () => {
+  getEventPriority('message');
+});

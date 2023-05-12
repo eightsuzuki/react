@@ -1,0 +1,3 @@
+test('getNearestMountedFiber', ()=>{
+    getNearestMountedFiber(fiber);
+    });

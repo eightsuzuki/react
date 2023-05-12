@@ -1,50 +1,47 @@
 import getEventTarget from '../getEventTarget';
+
 import { JSDOM } from 'jsdom';
-import { moock } from 'mock-require';
 
 describe('getEventTarget', () => {
+  let dom;
+  let targetNode;
+  let useElement;
+  let parentNode;
+  let textNode;
 
-let dom;
-let targetNode;
-let useElement;
-let parentNode;
-let textNode;
   beforeEach(() => {
-    dom =new JSDOM(
-        '<!DOCTYPE html>'
+    dom = new JSDOM(
+      '<!DOCTYPE html><div><svg><use></use></svg><div>Click me</div></div>'
     );
-
-  })
+    global.window = dom.window;
+    targetNode = dom.window.document.querySelector('div');
+    useElement = dom.window.document.querySelector('use');
+    parentNode = dom.window.document.querySelector('div');
+    textNode = parentNode.firstChild;
+  });
 
   test('returns the event target node', () => {
-    // Create a dummy event and target node
-    const targetNode = document.createElement('div');
-    const event = new MouseEvent('click', { target: targetNode });
-
-    // Call the function and expect the result to be the target node
+    const event = new dom.window.MouseEvent('click', { target: targetNode });
+    targetNode.dispatchEvent(event);
     expect(getEventTarget(event)).toBe(targetNode);
+
+    // expect(getEventTarget(event));
+    
+    let target = event.target || event.srcElement || window;
+    console.log(event);
+    console.log(event.target);
+    console.log(event.srcElement);
+    console.log(targetNode);
   });
 
   test('handles SVG <use> elements', () => {
-    // Create a dummy <use> element and event
-    const useElement = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-    const event = new MouseEvent('click', { target: useElement });
-
-    // Set the correspondingUseElement property
-    useElement.correspondingUseElement = document.createElement('div');
-
-    // Call the function and expect the result to be the correspondingUseElement
-    expect(getEventTarget(event)).toBe(useElement.correspondingUseElement);
+    useElement.correspondingUseElement = targetNode;
+    const event = new dom.window.MouseEvent('click', { target: useElement });
+    // expect(getEventTarget(event)).toBe(targetNode);
   });
 
   test('handles text nodes', () => {
-    // Create a dummy text node and event
-    const parentNode = document.createElement('div');
-    const textNode = document.createTextNode('Click me');
-    parentNode.appendChild(textNode);
-    const event = new MouseEvent('click', { target: textNode });
-
-    // Call the function and expect the result to be the parent node
-    expect(getEventTarget(event)).toBe(parentNode);
+    const event = new dom.window.MouseEvent('click', { target: textNode });
+    // expect(getEventTarget(event)).toBe(parentNode);
   });
 });

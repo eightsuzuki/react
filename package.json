@@ -25,6 +25,8 @@
     "@babel/preset-typescript": "^7.21.0",
     "chalk": "^5.2.0",
     "jsdom": "^21.1.0",
-    "minimist": "^1.2.8"
+    "minimist": "^1.2.8",
+    "mock-require": "^3.0.3",
+    "npm": "^9.6.5"
   }
 }

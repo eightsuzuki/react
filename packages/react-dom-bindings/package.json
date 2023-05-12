@@ -9,7 +9,8 @@
         "^react-is$": "<rootDir>/packages/react-is",
         "^react-reconciler$": "<rootDir>/packages/react-reconciler",
         "^shared$": "<rootDir>/packages/shared"
-    }
+    },
+    "testURL": "http://localhost/"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
