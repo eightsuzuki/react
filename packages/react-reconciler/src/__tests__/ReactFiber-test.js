@@ -1,9 +1,8 @@
 'use strict';
 
-const { JSDOM } = require('jsdom');
-const {
-  createContainer,
-} = require('react-reconciler/src/ReactFiberReconciler');
+import { JSDOM } from 'jsdom';
+import { createContainer } from 'react-reconciler/src/ReactFiberReconciler';
+import { ConcurrentRoot } from '../ReactRootTags';
 
 test('Dummy FiberRootNode', () => {
   const dom = new JSDOM(
@@ -12,6 +11,5 @@ test('Dummy FiberRootNode', () => {
   global.document = dom.window.document;
 
   const rootContainer = document.getElementById('root');
-  const root = createContainer(rootContainer);
-  console.log(root);
+  const root = createContainer(rootContainer, ConcurrentRoot);
 });

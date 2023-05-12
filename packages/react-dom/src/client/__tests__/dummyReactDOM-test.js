@@ -1,7 +1,7 @@
 'use strict';
 
-const { JSDOM } = require('jsdom');
-const ReactDOM = require('react-dom');
+import { JSDOM } from 'jsdom';
+import { createRoot } from 'react-dom';
 
 test('dummy test', () => {
   const dom = new JSDOM(
@@ -10,5 +10,5 @@ test('dummy test', () => {
   global.document = dom.window.document;
   const rootContainer = document.getElementById('root');
 
-  const root = ReactDOM.createRoot(rootContainer);
+  const root = createRoot(rootContainer);
 });

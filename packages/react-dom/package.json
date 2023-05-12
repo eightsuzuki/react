@@ -6,7 +6,8 @@
   "jest": {
     "moduleNameMapper": {
         "^react-dom$": "<rootDir>/packages/react-dom",
-        "^react-reconciler$": "<rootDir>/packages/react-reconciler"
+        "^react-reconciler$": "<rootDir>/packages/react-reconciler",
+        "^shared$":"<rootDir>/packages/shared"
     }
   },
   "scripts": {

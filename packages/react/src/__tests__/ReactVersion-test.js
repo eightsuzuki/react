@@ -10,6 +10,8 @@
 
 'use strict';
 
+import { version } from 'react';
+
 // NOTE: Intentionally using the dynamic version of the `gate` pragma to opt out
 // the negative test behavior. If this test happens to pass when running
 // against files source, that's fine. But all we care about is the behavior of
@@ -20,8 +22,7 @@
 test('ReactVersion matches package.json', () => {
   // if (gate(flags => flags.build && flags.stable && !flags.www)) {
   if (true) {
-    const React = require('react');
-    // const packageJSON = require('react/package.json');
-    expect(React.version).toBe('1.0.0');
+    const packageJSON = require('react/package.json');
+    expect(version).toBe(packageJSON.version);
   }
 });
